@@ -1,0 +1,56 @@
+<main role="main" class="container">
+<div>
+
+  
+<button onclick="window.location.href = 'task/bd'">Ver base de datos (raw json)</button>
+
+<button onclick="window.location.href = 'task/nuke'">Limpiar base de datos ;)</button>
+
+</div>
+
+  <div class="row">
+    <div class="col-12">
+      <h1>TODO List</h1>
+    </div>
+
+
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="input-group w-100">
+        <input
+          id="taskDescription"
+          type="text"
+          name="description"
+          placeholder="I have to..."
+          class="form-control">
+        <div class="input-group-append">
+          <input
+            type="button"
+            value="Add"
+            class="btn btn-primary"
+            onclick="storeTask();">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12" id="tasksList">
+      {{#each tasks}}
+      <div id="{{id}}" class="card my-3 {{#eq status 'done' }}bg-light{{/eq}}">
+        <div class="card-body">
+          
+          <p id="taskDesc-{{id}}" class="card-text">{{ description }}</p>
+
+          {{#eq status 'pending'}}
+              <a href="javascript:;" onclick="test2({{{id}}});" class="card-link">Done</a>
+            
+          {{/eq}}
+
+               <a href="javascript:;" onclick="test3({{{id}}});" class="card-link">Delete</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</main>
