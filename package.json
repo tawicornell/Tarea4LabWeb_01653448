@@ -14,7 +14,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "handlebars-helpers": "^0.10.0",
-    "knex": "^0.20.13",
+    "knex": "^2.4.0",
     "mssql": "^6.2.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
